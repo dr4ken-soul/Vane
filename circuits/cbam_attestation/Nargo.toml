@@ -1,0 +1,9 @@
+[package]
+name = "cbam_attestation"
+type = "bin"
+author = "Vane Protocol"
+description = "Poseidon2 Merkle membership, invoice nullifier and CBAM intensity circuit"
+license = "MIT"
+compiler_version = ">=1.0.0"
+
+[dependencies]

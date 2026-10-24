@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:vane="urn:vane:protocol:cbam:1.0">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+  <cbc:ID>GZB-2026-000481</cbc:ID>
+  <cbc:IssueDate>2026-09-14</cbc:IssueDate>
+  <cbc:DueDate>2026-10-14</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Electricity supply for hot rolled coil rolling mill, Gebze Mill 04. CBAM precursor energy evidence.</cbc:Note>
+  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:BuyerReference>TR-GZB-0091</cbc:BuyerReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID>0091847810923811</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Organize Sanayi Bolgesi 4. Cadde No 12</cbc:StreetName>
+        <cbc:CityName>Gebze</cbc:CityName>
+        <cbc:PostalZone>41400</cbc:PostalZone>
+        <cbc:CountryID>TR</cbc:CountryID>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>TR4810923811</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Gebze Enerji Anonim Sirketi</cbc:RegistrationName>
+        <cbc:CompanyID>TR4810923811</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID>0091774400523390</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Demirciler Sitesi 6. Cadde No 24</cbc:StreetName>
+        <cbc:CityName>Gebze</cbc:CityName>
+        <cbc:PostalZone>41400</cbc:PostalZone>
+        <cbc:CountryID>TR</cbc:CountryID>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>TR7704400523390</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Gebze Celik Hadde Sanayi Anonim Sirketi</cbc:RegistrationName>
+        <cbc:CompanyID>TR7704400523390</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="EUR">3216112.64</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">26849360.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">3216112.64</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="EUR">26849360.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">26849360.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="EUR">30065472.64</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="EUR">30065472.64</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">54640</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">26849360.00</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>Discount for certified on site photovoltaic generation</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="EUR">8214400.00</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:Item>
+      <cbc:Description>Certified electricity supply, hot rolled coil rolling line 2</cbc:Description>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="CN">7208</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">642.50</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+    <vane:EnergyAllocation>
+      <vane:CleanKwhAllocated>41800</vane:CleanKwhAllocated>
+      <vane:CleanBatchKwh>310440</vane:CleanBatchKwh>
+      <vane:GridKwhAllocated>12840</vane:GridKwhAllocated>
+      <vane:GridEmissionFactorGPerKwh>412</vane:GridEmissionFactorGPerKwh>
+      <vane:FacilityLatitude>40.80</vane:FacilityLatitude>
+      <vane:FacilityLongitude>29.43</vane:FacilityLongitude>
+      <vane:FacilityMeterId>GEBZE-M04-ROOFTOP-PV</vane:FacilityMeterId>
+      <vane:ShipmentMassKg>185000</vane:ShipmentMassKg>
+      <vane:DirectProcessEmissionsKg>257410</vane:DirectProcessEmissionsKg>
+      <vane:MaxIntensityKgPerTonne>1450</vane:MaxIntensityKgPerTonne>
+    </vane:EnergyAllocation>
+  </cac:InvoiceLine>
+</Invoice>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:vane="urn:vane:protocol:cbam:1.0">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+  <cbc:ID>ANT-2026-000219</cbc:ID>
+  <cbc:IssueDate>2026-09-18</cbc:IssueDate>
+  <cbc:DueDate>2026-10-18</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Captive solar park supply for the Antalya cement kiln line 3 under a corporate power purchase agreement.</cbc:Note>
+  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:BuyerReference>TR-ANT-0417</cbc:BuyerReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID>0091847766120190</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Antalya Organize Sanayi Bolgesi 2. Cadde No 8</cbc:StreetName>
+        <cbc:CityName>Antalya</cbc:CityName>
+        <cbc:PostalZone>07190</cbc:PostalZone>
+        <cbc:CountryID>TR</cbc:CountryID>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>TR47588120033</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Antalya Gunes Enerji Anonim Sirketi</cbc:RegistrationName>
+        <cbc:CompanyID>TR47588120033</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID>0091774411200931</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Antalya Organize Sanayi Bolgesi 9. Cadde No 21</cbc:StreetName>
+        <cbc:CityName>Antalya</cbc:CityName>
+        <cbc:PostalZone>07190</cbc:PostalZone>
+        <cbc:CountryID>TR</cbc:CountryID>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>TR88100467190</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Antalya Cimento Sanayi Anonim Sirketi</cbc:RegistrationName>
+        <cbc:CompanyID>TR88100467190</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="EUR">215200.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">1793333.33</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">215200.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>12</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="EUR">1793333.33</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">1793333.33</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="EUR">2008533.33</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="EUR">2008533.33</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">22400</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">1793333.33</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Captive solar electricity allocation, kiln line 3</cbc:Description>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="CN">2710</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>12</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">80.06</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+    <vane:EnergyAllocation>
+      <vane:CleanKwhAllocated>22400</vane:CleanKwhAllocated>
+      <vane:CleanBatchKwh>112000</vane:CleanBatchKwh>
+      <vane:GridKwhAllocated>0</vane:GridKwhAllocated>
+      <vane:GridEmissionFactorGPerKwh>412</vane:GridEmissionFactorGPerKwh>
+      <vane:FacilityLatitude>36.90</vane:FacilityLatitude>
+      <vane:FacilityLongitude>30.70</vane:FacilityLongitude>
+      <vane:FacilityMeterId>ANT-SOLAR-PPA-01</vane:FacilityMeterId>
+      <vane:ShipmentMassKg>96000</vane:ShipmentMassKg>
+      <vane:DirectProcessEmissionsKg>0</vane:DirectProcessEmissionsKg>
+      <vane:MaxIntensityKgPerTonne>1200</vane:MaxIntensityKgPerTonne>
+    </vane:EnergyAllocation>
+  </cac:InvoiceLine>
+</Invoice>

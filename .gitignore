@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Hardhat
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+contracts/dist/
+
+# Noir and Barretenberg build output
+circuits/**/target/
+circuits/**/bbout/
+
+# Scratch space
+.tmp/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+
+# TypeScript build info
+*.tsbuildinfo

@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--vane-font-display, "Barlow Semi Condensed"), "Arial Narrow", sans-serif;
+  --font-body: var(--vane-font-body, "DM Sans"), system-ui, sans-serif;
+  --font-mono: var(--vane-font-mono, "Fira Code"), ui-monospace, monospace;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+:root {
+  --vane-font-display: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --vane-font-body: "DM Sans", system-ui, sans-serif;
+  --vane-font-mono: "Fira Code", ui-monospace, monospace;
+
+  --font-display: var(--vane-font-display, "Barlow Semi Condensed"), "Arial Narrow", sans-serif;
+  --font-body: var(--vane-font-body, "DM Sans"), system-ui, sans-serif;
+  --font-mono: var(--vane-font-mono, "Fira Code"), ui-monospace, monospace;
+
+  /* Surfaces */
+  --bg-primary: #0a0b0d;
+  --bg-secondary: #101216;
+  --bg-surface: #16191f;
+  --bg-elevated: #1d2129;
+
+  /* Brand and calibration accent */
+  --accent: #f0a500;
+  --accent-hover: #ffbe2e;
+  --accent-glow: rgba(240, 165, 0, 0.12);
+  --accent-subtle: rgba(240, 165, 0, 0.06);
+  --on-accent: #0a0b0d;
+
+  /* Foreground hierarchy */
+  --text-primary: #f1f3f5;
+  --text-secondary: #9aa1ac;
+  --text-muted: #68707d;
+
+  /* Hairlines and structural dividers */
+  --border-subtle: rgba(241, 243, 245, 0.06);
+  --border-default: rgba(241, 243, 245, 0.12);
+  --border-strong: rgba(241, 243, 245, 0.22);
+
+  /* Semantic telemetry states */
+  --success: #3dd68c;
+  --success-bg: rgba(61, 214, 140, 0.1);
+  --error: #f2555a;
+  --error-bg: rgba(242, 85, 90, 0.12);
+
+  /* Radius scale */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Tinted shadows */
+  --shadow-bezel: inset 0 1px 1px rgba(241, 243, 245, 0.1);
+  --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(241, 243, 245, 0.12);
+
+  /* Timings */
+  --duration-fast: 150ms;
+  --duration-normal: 260ms;
+  --duration-slow: 600ms;
+
+  /* Named semantic z-index scale */
+  --z-canvas: 0;
+  --z-grain: 3;
+  --z-content: 10;
+  --z-elevated: 20;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+}
+
+/* Liquid glass chrome used on fixed nav, modals and dropdowns. */
+.liquid-glass {
+  background: rgba(22, 25, 31, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 1px rgba(241, 243, 245, 0.1);
+  position: relative;
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(241, 243, 245, 0.28) 0%,
+    rgba(241, 243, 245, 0.08) 25%,
+    rgba(241, 243, 245, 0.02) 50%,
+    rgba(241, 243, 245, 0.08) 80%,
+    rgba(240, 165, 0, 0.28) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass-strong {
+  background: rgba(29, 33, 41, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: inset 0 1px 1px rgba(241, 243, 245, 0.16);
+  position: relative;
+}
+
+.liquid-glass-strong::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 165, 0, 0.45) 0%,
+    rgba(241, 243, 245, 0.12) 35%,
+    rgba(241, 243, 245, 0.03) 65%,
+    rgba(240, 165, 0, 0.35) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Mathematical noise grain overlay. */
+.surface-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+@layer utilities {
+  .animate-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      rgba(241, 243, 245, 0.04) 0%,
+      rgba(241, 243, 245, 0.1) 50%,
+      rgba(241, 243, 245, 0.04) 100%
+    );
+    background-size: 200% 100%;
+    animation: vane-shimmer 1.6s linear infinite;
+  }
+
+  @keyframes vane-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .schematic-flow {
+    animation: vane-schematic-flow 2.8s linear infinite;
+  }
+
+  @keyframes vane-schematic-flow {
+    0% {
+      stroke-dashoffset: 24;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-shimmer {
+    animation: none;
+  }
+
+  .schematic-flow {
+    animation: none;
+  }
+}

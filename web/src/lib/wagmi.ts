@@ -12,10 +12,16 @@ const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID 
  * Connectors offered inside the wallet connection modal.
  *
  * WalletConnect is only registered when a project identifier is configured so the modal never
- * offers a connector that cannot complete a handshake.
+ * offers a connector that cannot complete a handshake. The factory itself must stay browser-only:
+ * the WalletConnect SDK touches browser globals such as indexedDB during setup, which would
+ * otherwise break the static prerender pass on the server.
  */
-const connectors = walletConnectProjectId
-  ? [injected(), walletConnect({ projectId: walletConnectProjectId, showQrModal: true })]
+const isBrowser = typeof window !== "undefined";
+
+const connectors = isBrowser
+  ? walletConnectProjectId
+    ? [injected(), walletConnect({ projectId: walletConnectProjectId, showQrModal: true })]
+    : [injected()]
   : [injected()];
 
 /**

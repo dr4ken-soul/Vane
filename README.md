@@ -131,9 +131,7 @@ The script deploys `RelationsLib`, `ZKTranscriptLib`, `HonkVerifier`, `VaneMeter
 Verify the contracts:
 
 ```bash
-npx hardhat verify --network sepolia <HONK_VERIFIER_ADDRESS> \
-  --libraries contracts/HonkVerifier.sol:RelationsLib=<RELATIONS_LIB_ADDRESS> \
-  --libraries contracts/HonkVerifier.sol:ZKTranscriptLib=<ZK_TRANSCRIPT_LIB_ADDRESS>
+npx hardhat verify --network sepolia --libraries scripts/honkVerifierLibraries.cjs <HONK_VERIFIER_ADDRESS>
 
 npx hardhat verify --network sepolia <VANE_METER_ORACLE_ADDRESS> <DEPLOYER_ADDRESS>
 
@@ -148,6 +146,26 @@ VANE_METER_ORACLE_ADDRESS=<ORACLE_ADDRESS> npx hardhat run scripts/seedCleanRoot
 ```
 
 The seed script fetches the past 24 hours of Open-Meteo shortwave radiation and ambient temperature, models clean solar output, builds the same Poseidon2 allocation tree used by attestations and anchors the root. Optional `SEED_*` variables override the facility coordinates, rated capacity, meter name and supplier tax identifier. The address can also live in `contracts/.env`.
+
+For Hardhat 2.28 the linked verifier is verified with a module that exports the library dictionary:
+
+```bash
+npx hardhat verify --network sepolia --libraries scripts/honkVerifierLibraries.cjs <HONK_VERIFIER_ADDRESS>
+```
+
+## Live deployment
+
+The reference deployment is anchored on Ethereum Sepolia and verified on Etherscan:
+
+| Contract | Address |
+|---|---|
+| `HonkVerifier` | `0x61b563A4225819D6B2533c8663A6A29BFbABD429` |
+| `VaneMeterOracle` | `0xaa6a02b87cd1B97F5dBE553487d852ec4059b760` |
+| `VaneAttestationRegistry` | `0xDC0aD3Dd032a8B588dAdF44a7a3f83A03326Cd36` |
+
+Linked libraries: `RelationsLib` at `0x161a680e44d108249B6130Cb7e7E9D66c533a087` and `ZKTranscriptLib` at `0x23a64f5555F7e155BAd6F2342370B4C1D5a6D84d`.
+
+The production web application runs at `https://vane-orcin.vercel.app`. The seeded clean root was anchored from live Gebze Open-Meteo data in transaction `0x061431f5405498f7d8f5a33d8f74aeae7729e66982a2c8e98a65949ff5279f8e`.
 
 ## Rebuild the circuit
 

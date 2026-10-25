@@ -44,9 +44,8 @@ const config: HardhatUserConfig = {
     artifacts: "./artifacts",
   },
   etherscan: {
-    apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY ?? "",
-    },
+    // Single Etherscan V2 key. Hardhat-verify deprecated network-scoped V1 keys.
+    apiKey: process.env.ETHERSCAN_API_KEY ?? "",
   },
   mocha: {
     timeout: 240000,
